@@ -5,7 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { ActionCableProvider } from 'react-actioncable-provider'
 
-const API_WS_ROOT = `ws://${window.location.hostname}:ideadocs-api.herokuapp/cable`
+const API_WS_ROOT = `ws://${window.location.hostname}:/cable`
 
 ReactDOM.render(
   <ActionCableProvider url={API_WS_ROOT}>
