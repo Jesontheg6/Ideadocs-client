@@ -2,7 +2,7 @@
   "name": "ideaboard",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001",
+  "proxy": "https://ideadocs-api.herokuapp",
   "dependencies": {
     "actioncable": "^5.2.2-1",
     "axios": "^0.18.0",
