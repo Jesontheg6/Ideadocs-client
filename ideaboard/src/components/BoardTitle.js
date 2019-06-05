@@ -15,7 +15,7 @@ class BoardTitle extends Component {
   }
 
   componentDidMount() {
-    axios.get('/api/v1/boards.json')
+    axios.get('api/v1/boards.json')
     .then(response => {
       const title = response.data[0].boardtitle
 
