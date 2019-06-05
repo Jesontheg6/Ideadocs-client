@@ -46,7 +46,7 @@ class BoardTitle extends Component {
       })
     }
     axios
-      .put(`http://localhost:3001/api/v1/boards/${this.state.id}`, {board: {boardtitle: e.target.value}})
+      .put(`api/v1/boards/${this.state.id}`, {board: {boardtitle: e.target.value}})
       .then( res => {
     })
     .catch(error => console.log(error))
@@ -67,7 +67,7 @@ class BoardTitle extends Component {
       }
 
       axios
-        .put(`http://localhost:3001/api/v1/boards/${this.state.id}`, { board: { boardtitle: e.target.value } })
+        .put(`api/v1/boards/${this.state.id}`, { board: { boardtitle: e.target.value } })
         .then( res => {
           console.log(res);
           console.log(res.data)

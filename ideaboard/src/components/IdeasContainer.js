@@ -24,7 +24,7 @@ class IdeasContainer extends Component {
   }
 
   componentDidMount() {
-   axios.get('http://localhost:3001/api/v1/ideas.json')
+   axios.get('/api/v1/ideas.json')
     .then(response => { this.setState({ ideas: response.data }) })
     .catch(error => console.log(error))
   }
@@ -55,7 +55,7 @@ class IdeasContainer extends Component {
 
   addNewIdea = () => {
     axios.post(
-      'http://localhost:3001/api/v1/ideas',
+      'api/v1/ideas',
       {
         idea: {
           title: '',
@@ -82,7 +82,7 @@ class IdeasContainer extends Component {
   }
 
   deleteIdea = (id) => {
-    axios.delete(`http://localhost:3001/api/v1/ideas/${id}`)
+    axios.delete(`api/v1/ideas/${id}`)
     .then(response => {
       const ideaIndex = this.state.ideas.findIndex(x => x.id === id)
       const ideas = update(this.state.ideas, { $splice: [[ideaIndex, 1]]})
