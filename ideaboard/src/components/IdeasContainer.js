@@ -82,7 +82,7 @@ class IdeasContainer extends Component {
   }
 
   deleteIdea = (id) => {
-    axios.delete(`http://localhost:3001/api/v1/ideas/${id}`)
+    axios.delete(`api/v1/ideas/${id}`)
     .then(response => {
       const ideaIndex = this.state.ideas.findIndex(x => x.id === id)
       const ideas = update(this.state.ideas, { $splice: [[ideaIndex, 1]]})
