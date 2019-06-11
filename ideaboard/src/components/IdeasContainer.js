@@ -20,7 +20,7 @@ class IdeasContainer extends Component {
     super(props)
     this.references = new Map()
     this.selected = this.selected.bind(this)
-    this.handleReceivedIdeaEvent = this.handleReceivedIdeaEvent.bind(this)
+    // this.handleReceivedIdeaEvent = this.handleReceivedIdeaEvent.bind(this)
   }
 
   componentDidMount() {
