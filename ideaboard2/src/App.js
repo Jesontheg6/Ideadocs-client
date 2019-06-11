@@ -20,7 +20,7 @@ class App extends Component {
     this.setState({transisitonIn: e})
   }
 
-  resetNotification = () => {
+   resetNotification = () => { 
     this.setTransitionIn(false)
     this.setState({notification: ''})
   }

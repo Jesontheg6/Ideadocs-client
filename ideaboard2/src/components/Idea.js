@@ -30,7 +30,7 @@ class Idea extends Component {
 
   handleChangeColor = () => {
     axios.put(
-      `api/v1/ideas/${this.props.idea.id}`,
+      `https://ideadocs-api.herokuapp.com/api/v1/ideas/${this.props.idea.id}`,
       {
         idea: {
           title: this.state.title,

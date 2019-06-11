@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
 import axios from 'axios'
 import { ActionCable } from 'react-actioncable-provider'
+
 
 class BoardTitle extends Component {
   constructor(props) {
@@ -15,7 +17,7 @@ class BoardTitle extends Component {
   }
 
   componentDidMount() {
-    axios.get('api/v1/boards.json')
+    axios.get('https://ideadocs-api.herokuapp.com/api/v1/boards.json')
     .then(response => {
       const title = response.data[0].boardtitle
 
@@ -46,7 +48,7 @@ class BoardTitle extends Component {
       })
     }
     axios
-      .put(`api/v1/boards/${this.state.id}`, {board: {boardtitle: e.target.value}})
+      .put(`https://ideadocs-api.herokuapp.com/api/v1/boards/${this.state.id}`, {board: {boardtitle: e.target.value}})
       .then( res => {
     })
     .catch(error => console.log(error))
@@ -67,7 +69,7 @@ class BoardTitle extends Component {
       }
 
       axios
-        .put(`api/v1/boards/${this.state.id}`, { board: { boardtitle: e.target.value } })
+        .put(`https://ideadocs-api.herokuapp.com/api/v1/boards/${this.state.id}`, { board: { boardtitle: e.target.value } })
         .then( res => {
           console.log(res);
           console.log(res.data)
@@ -85,6 +87,8 @@ class BoardTitle extends Component {
         console.warn("Unhandled event type")
     }
   }
+
+
 
   render(){
     return(
