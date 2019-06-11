@@ -29,29 +29,29 @@ class IdeasContainer extends Component {
     .catch(error => console.log(error))
   }
 
-  handleReceivedIdeaEvent = ({ event, idea }) => {
-    switch(event) {
-      case 'created':
-        this.setState({ ideas: [...this.state.ideas, idea] })
-        break
-      case 'updated':
-        this.setState(prevState => {
-          const ideas = prevState.ideas.map((item) => {
-            if (item.id === idea.id) {
-              return Object.assign(item, idea)
-            } else {
-              return item
-            }
-          })
+  // handleReceivedIdeaEvent = ({ event, idea }) => {
+  //   switch(event) {
+  //     case 'created':
+  //       this.setState({ ideas: [...this.state.ideas, idea] })
+  //       break
+  //     case 'updated':
+  //       this.setState(prevState => {
+  //         const ideas = prevState.ideas.map((item) => {
+  //           if (item.id === idea.id) {
+  //             return Object.assign(item, idea)
+  //           } else {
+  //             return item
+  //           }
+  //         })
 
-          return { ideas }
-        })
-        break
-      default:
-        console.warn("Unhandled event type")
-    }
-    console.log("XXXXXx")
-  }
+  //         return { ideas }
+  //       })
+  //       break
+  //     default:
+  //       console.warn("Unhandled event type")
+  //   }
+  //   console.log("XXXXXx")
+  // }
 
   addNewIdea = () => {
     axios.post(
